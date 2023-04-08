@@ -34,3 +34,5 @@ curl checkip.amazonaws.com
 
 Créer un qr code d'une url
 curl qrenco.de/https://www.jeuxvideo.com"
+
+doskey /history
