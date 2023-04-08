@@ -1,0 +1,36 @@
+// afficher tous les reseaux wifi en memoire
+netsh wlan show profiles
+
+
+// Affiche le password en clair du reseaux wifi enregistré
+wlan show profile "Tel de Mathias" key=clear
+
+Changer l'affiche d'un fichier
+copy /b "nomimage.jpg"+"nomdu fichier" "nouveau nom.jpg"
+
+
+Chirffrer folder 
+cipher /E 
+
+Caché des fichier 
+attrib +h +s +r foldername
+
+
+Reverse 
+attrib -h -s -r foldername
+
+for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do @if "%j" NEQ "" (echo SSID: %j & netsh wlan show profiles %j key=clear | findstr "Key Content") & echo.
+
+changer la couleur de la commande : color xy (color ? pour savoir les numéros)
+
+Avoir les info d'une url (même reduite)
+curl --head --location "url" | findstr Location
+
+Savoir si l'url est up
+curl --Is "url" | findstr Location
+
+Connaitre son ip public
+curl checkip.amazonaws.com
+
+Créer un qr code d'une url
+curl qrenco.de/https://www.jeuxvideo.com"
