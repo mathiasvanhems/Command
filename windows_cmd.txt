@@ -1,38 +1,42 @@
-// afficher tous les reseaux wifi en memoire
+# afficher tous les reseaux wifi en memoire
 netsh wlan show profiles
 
 
-// Affiche le password en clair du reseaux wifi enregistré
-wlan show profile "Tel de Mathias" key=clear
+# Affiche le password en clair du reseaux wifi enregistré
+netsh wlan show profile "Tel de Mathias" key=clear
 
-Changer l'affiche d'un fichier
-copy /b "nomimage.jpg"+"nomdu fichier" "nouveau nom.jpg"
+# Changer l'affiche d'un fichier
+copy /b "nomimage.jpg"+"xxx.zip" "nouveau nom.jpg"
+### Avec 7zip (par exemple on peut ouvrir l'image
 
-
-Chirffrer folder 
+#Chiffrer folder ne fonctionne pas sur la version familial : https://en.wikipedia.org/wiki/Encrypting_File_System#Windows
 cipher /E 
 
-Caché des fichier 
+#Caché des fichier 
 attrib +h +s +r foldername
 
 
-Reverse 
+#Reverse 
 attrib -h -s -r foldername
 
-for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do @if "%j" NEQ "" (echo SSID: %j & netsh wlan show profiles %j key=clear | findstr "Key Content") & echo.
 
+Afficher password des wlan
+for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do @if "%j" NEQ "" (echo SSID: %j & netsh wlan show profiles %j key=clear | findstr "Key Content") & echo.
+#commande française
+for /f "skip=9 tokens=5,*" %i in ('netsh wlan show p') do @if "%j" NEQ "" (echo SSID: %j & netsh wlan show p "%j" key=clear | findstr "clé") & echo.
 changer la couleur de la commande : color xy (color ? pour savoir les numéros)
 
-Avoir les info d'une url (même reduite)
+#Avoir les info d'une url (même reduite)
 curl --head --location "url" | findstr Location
 
-Savoir si l'url est up
+S#avoir si l'url est up
 curl --Is "url" | findstr Location
 
-Connaitre son ip public
+#Connaitre son ip public
 curl checkip.amazonaws.com
 
-Créer un qr code d'une url
+# un qr code d'une url
 curl qrenco.de/https://www.jeuxvideo.com"
 
+#history
 doskey /history
