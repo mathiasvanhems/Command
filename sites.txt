@@ -1,20 +1,3 @@
-Ditto : save pres papier - 1clipboard
-Sharex : capture d'ecran (push, griaso)
-flux : luminonisté ecran
-paint.net : paint 
-recuva :recup d'element supp
-ninite !!!!!!!! : install multiple
+http://www.jsnice.org/ desofucation js
 
-Driver booster : MaJ driver
-Speccy : spec PC
-Windir : GUI analyse de fichiers (place)
-Rufus : clé bootable
-
-Fences (payant) rangement bureaux - nimiplaces gratuit
-everything
-process hacker
-Display fusion 
-portable apps
-ublock adblock en mieux ?
-ghostery
-stellarium
+https://beautifier.io/ ou https://prettier.io/playground/ mise en forme
