@@ -24,12 +24,14 @@ Afficher password des wlan
 for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do @if "%j" NEQ "" (echo SSID: %j & netsh wlan show profiles %j key=clear | findstr "Key Content") & echo.
 #commande française
 for /f "skip=9 tokens=5,*" %i in ('netsh wlan show p') do @if "%j" NEQ "" (echo SSID: %j & netsh wlan show p "%j" key=clear | findstr "clé") & echo.
-changer la couleur de la commande : color xy (color ? pour savoir les numéros)
+
+#changer la couleur de la commande : 
+color xy (color ? pour savoir les numéros)
 
 #Avoir les info d'une url (même reduite)
-curl --head --location "url" | findstr Location
+curl --head --location "http://bit.ly/htbacademy" | findstr Location
 
-S#avoir si l'url est up
+#Savoir si l'url est up
 curl --Is "url" | findstr Location
 
 #Connaitre son ip public
@@ -39,4 +41,28 @@ curl checkip.amazonaws.com
 curl qrenco.de/https://www.jeuxvideo.com"
 
 #history
-doskey /history
+
+
+Get-WmiObject -Class <class>
+  Win32_computerSystem
+  Win32_bios
+  Win32_baseboard    (Motherboard)
+  Win32_processor    (32+64 bit processor info)
+  Win32_Share        (File shares)
+  Win32_LogicalDisk  (hard disk)
+  Win32_PhysicalMemory
+  Win32_Printer
+  Win32_operatingSystem  (Virtual Memory)
+  Win32_Product          (Warning avoid this: Installed programs will reconfigure see Q974524)
+  Win32reg_AddRemovePrograms (Installed 32 bit programs with SCCM client)
+  Win32Reg_AddRemovePrograms64 (Installed 64 bit programs with SCCM client)
+  
+  List all properties of a class:
+  PS C:\> Get-WmiObject Win32_bios | Get-Member
+  
+  Find a specific class property:
+  
+  PS C:\> gwmi Win32_bios | Get-Member -MemberType property | Where { $_.name -match 'install'}
+  
+https://ss64.com/ps/get-wmiobject.html
+https://adamtheautomator.com/get-wmiobject/
