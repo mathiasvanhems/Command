@@ -66,3 +66,12 @@ Get-WmiObject -Class <class>
   
 https://ss64.com/ps/get-wmiobject.html
 https://adamtheautomator.com/get-wmiobject/
+
+#############################################################################################
+Command to show OLD right click menu:
+reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\inprocServer32" /f /ve
+
+Command to show NEW right click menu (not shown in video):
+reg delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}" /f
+
+Registry Path: Computer\HKEY_CURRENT_USER\SOFTWARE\CLASSES\CLSID
