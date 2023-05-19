@@ -75,3 +75,30 @@ Command to show NEW right click menu (not shown in video):
 reg delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}" /f
 
 Registry Path: Computer\HKEY_CURRENT_USER\SOFTWARE\CLASSES\CLSID
+
+
+
+DISM
+
+To check Windows image for issues (Doesn't do repairs)
+DISM /Online /Cleanup-Image /CheckHealth
+
+more advanced scan
+DISM /Online /Cleanup-Image /ScanHealth
+
+Fix problems
+DISM /Online /Cleanup-Image /RestoreHealth
+    - This might get stuck sometimes. Just wait for it to finish. 
+
+use offline image
+DISM /Online /Cleanup-Image /RestoreHealth /Source:D:\Sources\install.esd 
+
+to disable windows update in the scan add (/LimitAccess)
+
+SFC
+
+to just verify run
+sfc /verifyonly
+
+to fix run
+SFC /scannow
